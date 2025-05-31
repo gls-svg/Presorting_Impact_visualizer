@@ -7,7 +7,7 @@ import ComparisonChart from './ComparisonChart';
 import BinarySearchVisualizer from './BinarySearchVisualizer';
 import { Algorithm, SortingAlgorithm, VisualizerState, ResultData } from '../types';
 import { runAlgorithm } from '../utils/algorithmRunner';
-import { sortArray } from '../utils/sortingAlgorithms';
+import { sortArray, getSortingComplexity } from '../utils/sortingAlgorithms';
 
 const Visualizer: React.FC = () => {
   const [array, setArray] = useState<number[]>([]);
@@ -68,6 +68,7 @@ const Visualizer: React.FC = () => {
       algorithm,
       sortingAlgorithm,
       arraySize: array.length,
+      sortingComplexity: getSortingComplexity(sortingAlgorithm),
     });
     
     // Generate visualization steps
