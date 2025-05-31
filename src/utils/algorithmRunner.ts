@@ -1,5 +1,23 @@
-import { Algorithm, AlgorithmResult } from '../types';
+import { Algorithm, AlgorithmResult, TimeComplexity } from '../types';
 import { binarySearch, linearSearch } from './searchAlgorithms';
+
+const getSearchComplexity = (algorithm: Algorithm, isSorted: boolean): TimeComplexity => {
+  if (algorithm === 'binarySearch') {
+    return {
+      best: isSorted ? 'O(1)' : 'O(n)',
+      average: isSorted ? 'O(log n)' : 'O(n)',
+      worst: isSorted ? 'O(log n)' : 'O(n)',
+      space: isSorted ? 'O(1)' : 'O(1)',
+    };
+  } else {
+    return {
+      best: 'O(1)',
+      average: 'O(n/2)',
+      worst: 'O(n)',
+      space: 'O(1)',
+    };
+  }
+};
 
 export async function runAlgorithm(
   array: number[],
@@ -54,5 +72,6 @@ export async function runAlgorithm(
     comparisons,
     found,
     position,
+    timeComplexity: getSearchComplexity(algorithm, isSorted),
   };
 }

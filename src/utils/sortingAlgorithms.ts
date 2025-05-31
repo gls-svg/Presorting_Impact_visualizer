@@ -1,4 +1,30 @@
-import { SortingAlgorithm } from '../types';
+import { SortingAlgorithm, TimeComplexity } from '../types';
+
+export const getSortingComplexity = (algorithm: SortingAlgorithm): TimeComplexity => {
+  switch (algorithm) {
+    case 'quickSort':
+      return {
+        best: 'O(n log n)',
+        average: 'O(n log n)',
+        worst: 'O(n²)',
+        space: 'O(log n)',
+      };
+    case 'mergeSort':
+      return {
+        best: 'O(n log n)',
+        average: 'O(n log n)',
+        worst: 'O(n log n)',
+        space: 'O(n)',
+      };
+    case 'bubbleSort':
+      return {
+        best: 'O(n)',
+        average: 'O(n²)',
+        worst: 'O(n²)',
+        space: 'O(1)',
+      };
+  }
+};
 
 // Quick Sort
 function quickSort(array: number[]): number[] {
