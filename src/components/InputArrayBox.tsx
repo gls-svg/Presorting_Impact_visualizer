@@ -129,27 +129,27 @@ const InputArrayBox: React.FC<InputArrayBoxProps> = ({
           <div className="flex flex-wrap gap-2">
             <button
               onClick={startEditing}
-              className="px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 flex items-center"
+              className="w-10 h-10 bg-blue-600 text-white rounded-full hover:bg-blue-700 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <Edit3 className="w-4 h-4 mr-1" />
-              Edit
+              <Edit3 className="w-4 h-4" />
+              
             </button>
             
             <button
               onClick={() => generateRandomArray(20)}
-              className="px-3 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-1 flex items-center"
+              className="w-10 h-10 bg-purple-600 text-white rounded-full hover:bg-purple-700 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-purple-500"
             >
-              <RefreshCw className="w-4 h-4 mr-1" />
-              Random
+              <RefreshCw className="w-4 h-4" />
+              
             </button>
             
             {array.length > 0 && (
               <button
                 onClick={clearArray}
-                className="px-3 py-1 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-1 flex items-center"
+                className="w-10 h-10 bg-purple-600 text-white rounded-full hover:bg-purple-700 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-purple-500"
               >
-                <Trash className="w-4 h-4 mr-1" />
-                Clear
+                <Trash className="w-4 h-4" />
+      
               </button>
             )}
           </div>
